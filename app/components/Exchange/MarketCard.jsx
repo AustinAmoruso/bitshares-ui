@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import FormattedAsset from "../Utility/FormattedAsset";
 import FormattedPrice from "../Utility/FormattedPrice";
 import Translate from "react-translate-component";
@@ -19,7 +20,7 @@ class MarketCard extends React.Component {
     }
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     }
 
     _onClick(marketID) {

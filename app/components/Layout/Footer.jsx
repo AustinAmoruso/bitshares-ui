@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import AltContainer from "alt-container";
 import Translate from "react-translate-component";
 import BindToChainState from "../Utility/BindToChainState";
@@ -18,7 +19,7 @@ class Footer extends React.Component {
 
     static propTypes = {
         dynGlobalObject: ChainTypes.ChainObject.isRequired,
-        synced: React.PropTypes.bool.isRequired
+        synced: PropTypes.bool.isRequired
     };
 
     static defaultProps = {
@@ -26,7 +27,7 @@ class Footer extends React.Component {
     };
 
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     };
 
     constructor(props){

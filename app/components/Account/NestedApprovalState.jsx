@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import utils from "common/utils";
@@ -13,7 +14,7 @@ class AccountPermissionTree extends React.Component {
     static propTypes = {
         account: ChainTypes.ChainAccount.isRequired,
         accounts: ChainTypes.ChainAccountsList,
-        indent: React.PropTypes.number.isRequired
+        indent: PropTypes.number.isRequired
     };
 
     static defaultProps = {
@@ -102,7 +103,7 @@ const BoundAccountPermissionTree = BindToChainState(AccountPermissionTree);
 class KeyPermissionBranch extends React.Component {
 
     static propTypes = {
-        indent: React.PropTypes.number.isRequired
+        indent: PropTypes.number.isRequired
     };
 
     static defaultProps = {
@@ -250,7 +251,7 @@ class ProposalWrapper extends React.Component {
 
     static propTypes = {
         proposal: ChainTypes.ChainObject.isRequired,
-        type: React.PropTypes.string.isRequired
+        type: PropTypes.string.isRequired
     };
 
     static defaultProps = {

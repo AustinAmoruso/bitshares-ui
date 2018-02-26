@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classnames from "classnames";
 import Translate from "react-translate-component";
 import PrivateKeyView from "components/PrivateKeyView";
@@ -13,14 +14,14 @@ import PrivateKeyStore from "stores/PrivateKeyStore";
 class PubKeyInput extends React.Component {
 
     static propTypes = {
-        label: React.PropTypes.string.isRequired, // a translation key for the label
-        value: React.PropTypes.string, // current value
-        error: React.PropTypes.string, // the error message override
-        placeholder: React.PropTypes.string, // the placeholder text to be displayed when there is no user_input
-        onChange: React.PropTypes.func, // a method to be called any time user input changes
-        onAction: React.PropTypes.func, // a method called when Add button is clicked
-        tabIndex: React.PropTypes.number, // tabindex property to be passed to input tag
-        disableActionButton: React.PropTypes.bool // use it if you need to disable action button
+        label: PropTypes.string.isRequired, // a translation key for the label
+        value: PropTypes.string, // current value
+        error: PropTypes.string, // the error message override
+        placeholder: PropTypes.string, // the placeholder text to be displayed when there is no user_input
+        onChange: PropTypes.func, // a method to be called any time user input changes
+        onAction: PropTypes.func, // a method called when Add button is clicked
+        tabIndex: PropTypes.number, // tabindex property to be passed to input tag
+        disableActionButton: PropTypes.bool // use it if you need to disable action button
     }
 
     constructor(props) {

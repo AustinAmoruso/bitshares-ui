@@ -1,5 +1,5 @@
-import React from "react";
-import {PropTypes, Component} from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import ActionSheet from "react-foundation-apps/src/action-sheet";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 

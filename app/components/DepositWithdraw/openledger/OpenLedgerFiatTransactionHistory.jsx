@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ChainTypes from "components/Utility/ChainTypes";
 import BindToChainState from "components/Utility/BindToChainState";
 
 class OpenLedgerFiatTransactionHistory extends React.Component {
     static propTypes = {
-        rpc_url:               React.PropTypes.string,
+        rpc_url:               PropTypes.string,
         account: ChainTypes.ChainAccount,
     };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Translate from "react-translate-component";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
@@ -11,9 +12,9 @@ class AssetSelector extends React.Component {
 
     static propTypes = {
         assets: ChainTypes.ChainAssetsList,
-        value: React.PropTypes.string, // asset id
-        onChange: React.PropTypes.func,
-        scroll_length: React.PropTypes.number
+        value: PropTypes.string, // asset id
+        onChange: PropTypes.func,
+        scroll_length: PropTypes.number
     };
 
     render() {
@@ -35,15 +36,15 @@ AssetSelector = BindToChainState(AssetSelector);
 class AmountSelector extends React.Component {
 
     static propTypes = {
-        label: React.PropTypes.string, // a translation key for the label
+        label: PropTypes.string, // a translation key for the label
         asset: ChainTypes.ChainAsset.isRequired, // selected asset by default
-        assets: React.PropTypes.array,
-        amount: React.PropTypes.any,
-        placeholder: React.PropTypes.string,
-        onChange: React.PropTypes.func.isRequired,
-        tabIndex: React.PropTypes.number,
-        error: React.PropTypes.string,
-        scroll_length: React.PropTypes.number
+        assets: PropTypes.array,
+        amount: PropTypes.any,
+        placeholder: PropTypes.string,
+        onChange: PropTypes.func.isRequired,
+        tabIndex: PropTypes.number,
+        error: PropTypes.string,
+        scroll_length: PropTypes.number
     };
 
     static defaultProps = {

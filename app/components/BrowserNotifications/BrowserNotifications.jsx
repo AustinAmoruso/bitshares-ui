@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import {ChainTypes as GraphChainTypes, ChainStore} from "bitsharesjs/es";
@@ -13,7 +14,7 @@ class BrowserNotifications extends React.Component {
 
     static propTypes = {
         account: ChainTypes.ChainAccount.isRequired,
-        settings: React.PropTypes.object,
+        settings: PropTypes.object,
     };
 
     componentWillMount() {

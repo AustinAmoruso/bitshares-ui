@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Translate from "react-translate-component";
 import {ChainStore} from "bitsharesjs/es";
 import ChainTypes from "components/Utility/ChainTypes";
@@ -17,21 +18,21 @@ import counterpart from "counterpart";
 
 class BlockTradesGatewayDepositRequest extends React.Component {
     static propTypes = {
-        url:               React.PropTypes.string,
-        gateway:           React.PropTypes.string,
-        deposit_coin_type: React.PropTypes.string,
-        deposit_asset_name: React.PropTypes.string,
-        deposit_account: React.PropTypes.string,
-        receive_coin_type: React.PropTypes.string,
+        url:               PropTypes.string,
+        gateway:           PropTypes.string,
+        deposit_coin_type: PropTypes.string,
+        deposit_asset_name: PropTypes.string,
+        deposit_account: PropTypes.string,
+        receive_coin_type: PropTypes.string,
         account: ChainTypes.ChainAccount,
         issuer_account: ChainTypes.ChainAccount,
-        deposit_asset: React.PropTypes.string,
-        deposit_wallet_type: React.PropTypes.string,
+        deposit_asset: PropTypes.string,
+        deposit_wallet_type: PropTypes.string,
         receive_asset: ChainTypes.ChainAsset,
         deprecated_in_favor_of: ChainTypes.ChainAsset,
-        deprecated_message: React.PropTypes.string,
-        action: React.PropTypes.string,
-        supports_output_memos: React.PropTypes.bool.isRequired
+        deprecated_message: PropTypes.string,
+        action: PropTypes.string,
+        supports_output_memos: PropTypes.bool.isRequired
     };
 
     static defaultProps = {

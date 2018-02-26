@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import {Link} from "react-router/es";
 import Translate from "react-translate-component";
 import notify from "actions/NotificationActions";
@@ -86,7 +87,7 @@ export default class WalletChangePassword extends Component {
 class WalletPassword extends Component {
 
     static propTypes = {
-        onValid: React.PropTypes.func.isRequired
+        onValid: PropTypes.func.isRequired
     };
 
     constructor() {

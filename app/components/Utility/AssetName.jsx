@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import utils from "common/utils";
 import asset_utils from "common/asset_utils";
 import ChainTypes from "./ChainTypes";
@@ -9,9 +10,9 @@ class AssetName extends React.Component {
 
 	static propTypes = {
 		asset: ChainTypes.ChainAsset.isRequired,
-		replace: React.PropTypes.bool.isRequired,
-		name: React.PropTypes.string.isRequired,
-		dataPlace: React.PropTypes.string.isRequired
+		replace: PropTypes.bool.isRequired,
+		name: PropTypes.string.isRequired,
+		dataPlace: PropTypes.string.isRequired
 	};
 
 	static defaultProps = {

@@ -1,4 +1,5 @@
-import React from "react"; 
+import PropTypes from "prop-types";
+import React from "react";
 
 let stubRouterContext = (Component, props, stubs) => {
     function RouterStub() { }
@@ -21,8 +22,8 @@ let stubRouterContext = (Component, props, stubs) => {
 
     return React.createClass({
       childContextTypes: {
-        router: React.PropTypes.func,
-        routeDepth: React.PropTypes.number
+        router: PropTypes.func,
+        routeDepth: PropTypes.number
       },
 
       getChildContext () {

@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import utils from "common/utils";
 
 class Dropdown extends React.Component {
 
     static propTypes = {
-        scroll_length: React.PropTypes.number
+        scroll_length: PropTypes.number
     }
 
     static defaultProps = {

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { zipObject } from "lodash";
 import counterpart from "counterpart";
 import utils from "common/utils";
@@ -41,8 +42,8 @@ function adjust_links(str) {
 class HelpContent extends React.Component {
 
     static propTypes = {
-        path: React.PropTypes.string.isRequired,
-        section: React.PropTypes.string
+        path: PropTypes.string.isRequired,
+        section: PropTypes.string
     };
 
     constructor(props) {

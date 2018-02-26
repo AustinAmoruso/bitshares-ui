@@ -1,5 +1,5 @@
 import React from "react";
-import {PropTypes} from "react";
+import PropTypes from "prop-types";
 import FormattedAsset from "../Utility/FormattedAsset";
 import {Link as RealLink} from "react-router/es";
 import Translate from "react-translate-component";

@@ -1,17 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 import counterpart from "counterpart";
 
 export default class AccountSelect extends React.Component {
 
     static propTypes = {
-        account_names: React.PropTypes.array,
-        list_size: React.PropTypes.number,
-        onChange: React.PropTypes.func,
-        placeholder: React.PropTypes.string,
-        center: React.PropTypes.bool,
-        tabIndex: React.PropTypes.number,
-        className: React.PropTypes.string
-        //defaultAccount: React.PropTypes.string
+        account_names: PropTypes.array,
+        list_size: PropTypes.number,
+        onChange: PropTypes.func,
+        placeholder: PropTypes.string,
+        center: PropTypes.bool,
+        tabIndex: PropTypes.number,
+        className: PropTypes.string
+        //defaultAccount: PropTypes.string
     };
 
     constructor(props) {

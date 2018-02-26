@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Trigger from "react-foundation-apps/src/trigger";
 import Translate from "react-translate-component";
 import ChainTypes from "components/Utility/ChainTypes";
@@ -22,15 +23,15 @@ class RuDexWithdrawModal extends React.Component {
         account: ChainTypes.ChainAccount.isRequired,
         issuer: ChainTypes.ChainAccount.isRequired,
         asset: ChainTypes.ChainAsset.isRequired,
-        output_coin_name: React.PropTypes.string.isRequired,
-        output_coin_symbol: React.PropTypes.string.isRequired,
-        output_coin_type: React.PropTypes.string.isRequired,
-        url: React.PropTypes.string,
-        output_wallet_type: React.PropTypes.string,
-        output_supports_memos: React.PropTypes.bool.isRequired,
-        amount_to_withdraw: React.PropTypes.string,
+        output_coin_name: PropTypes.string.isRequired,
+        output_coin_symbol: PropTypes.string.isRequired,
+        output_coin_type: PropTypes.string.isRequired,
+        url: PropTypes.string,
+        output_wallet_type: PropTypes.string,
+        output_supports_memos: PropTypes.bool.isRequired,
+        amount_to_withdraw: PropTypes.string,
         balance: ChainTypes.ChainObject,
-        min_amount: React.PropTypes.number
+        min_amount: PropTypes.number
     };
 
     constructor(props) {

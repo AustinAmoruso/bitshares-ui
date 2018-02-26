@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import counterpart from "counterpart";
 import utils from "common/utils";
 import ChainTypes from "../Utility/ChainTypes";
@@ -12,9 +13,9 @@ class WorkerApproval extends React.Component{
 
     static propTypes = {
         worker: ChainTypes.ChainObject.isRequired ,
-        onAddVote: React.PropTypes.func, /// called with vote id to add
-        onRemoveVote: React.PropTypes.func, /// called with vote id to remove
-        vote_ids: React.PropTypes.object  /// Set of items currently being voted for
+        onAddVote: PropTypes.func, /// called with vote id to add
+        onRemoveVote: PropTypes.func, /// called with vote id to remove
+        vote_ids: PropTypes.object  /// Set of items currently being voted for
     };
 
     static defaultProps = {

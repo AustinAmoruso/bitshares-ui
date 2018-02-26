@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import BalanceComponent from "../Utility/BalanceComponent";
 import AccountImage from "../Account/AccountImage";
 import ChainTypes from "../Utility/ChainTypes";
@@ -17,7 +18,7 @@ import {ChainStore} from "bitsharesjs/es";
 class AccountCard extends React.Component {
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     }
 
     static propTypes = {

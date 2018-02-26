@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Trigger from "react-foundation-apps/src/trigger";
 import Translate from "react-translate-component";
 import ChainTypes from "components/Utility/ChainTypes";
@@ -14,9 +15,9 @@ class WithdrawFiatOpenLedger extends React.Component {
    static propTypes = {
        account: ChainTypes.ChainAccount.isRequired,
        issuer_account: ChainTypes.ChainAccount.isRequired,
-       deposit_asset: React.PropTypes.string,
+       deposit_asset: PropTypes.string,
        receive_asset: ChainTypes.ChainAsset.isRequired,
-       rpc_url: React.PropTypes.string
+       rpc_url: PropTypes.string
    }
 
    constructor( props ) {

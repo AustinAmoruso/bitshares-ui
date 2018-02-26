@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import FormattedAsset from "./FormattedAsset";
 import ChainTypes from "./ChainTypes";
 import BindToChainState from "./BindToChainState";
@@ -13,8 +14,8 @@ class BalanceComponent extends React.Component {
 
     static propTypes = {
         balance: ChainTypes.ChainObject.isRequired,
-        assetInfo: React.PropTypes.node,
-        hide_asset: React.PropTypes.bool
+        assetInfo: PropTypes.node,
+        hide_asset: PropTypes.bool
     };
 
     static defaultProps = {

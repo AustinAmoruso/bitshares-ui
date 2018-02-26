@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Immutable from "immutable";
 import utils from "common/utils";
 import Translate from "react-translate-component";
@@ -40,7 +41,7 @@ const starSort = function(a, b, inverse, starredAccounts) {
 
 class DashboardList extends React.Component {
 	static contextTypes = {
-		router: React.PropTypes.object.isRequired
+		router: PropTypes.object.isRequired
 	}
 
 	static propTypes = {

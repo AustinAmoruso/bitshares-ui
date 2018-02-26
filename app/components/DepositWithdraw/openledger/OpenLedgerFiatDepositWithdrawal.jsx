@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Translate from "react-translate-component";
 import ChainTypes from "components/Utility/ChainTypes";
 import BindToChainState from "components/Utility/BindToChainState";
@@ -13,18 +14,18 @@ import WithdrawFiatOpenLedger from "./WithdrawFiatOpenLedger";
 
 class OpenLedgerFiatDepositWithdrawCurrency extends React.Component {
     static propTypes = {
-        url:               React.PropTypes.string,
-        gateway:           React.PropTypes.string,
-        deposit_coin_type: React.PropTypes.string,
-        deposit_asset_name: React.PropTypes.string,
-        deposit_account: React.PropTypes.string,
-        receive_coin_type: React.PropTypes.string,
+        url:               PropTypes.string,
+        gateway:           PropTypes.string,
+        deposit_coin_type: PropTypes.string,
+        deposit_asset_name: PropTypes.string,
+        deposit_account: PropTypes.string,
+        receive_coin_type: PropTypes.string,
         account: ChainTypes.ChainAccount,
         issuer_account: ChainTypes.ChainAccount,
-        deposit_asset: React.PropTypes.string,
+        deposit_asset: PropTypes.string,
         receive_asset: ChainTypes.ChainAsset,
-        deposit_allowed: React.PropTypes.bool,
-        withdraw_allowed: React.PropTypes.bool
+        deposit_allowed: PropTypes.bool,
+        withdraw_allowed: PropTypes.bool
     };
 
     constructor(props) {
@@ -132,7 +133,7 @@ OpenLedgerFiatDepositWithdrawCurrency = BindToChainState(OpenLedgerFiatDepositWi
 
 class OpenLedgerFiatDepositWithdrawal extends React.Component {
     static propTypes = {
-        rpc_url:           React.PropTypes.string,
+        rpc_url:           PropTypes.string,
         account: ChainTypes.ChainAccount,
         issuer_account: ChainTypes.ChainAccount,
     };

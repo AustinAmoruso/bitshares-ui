@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Immutable from "immutable";
 import AccountImage from "../Account/AccountImage";
 import ChainTypes from "../Utility/ChainTypes";
@@ -22,7 +23,7 @@ class WitnessCard extends React.Component {
     }
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     }
 
     _onCardClick(e) {
@@ -85,7 +86,7 @@ class WitnessRow extends React.Component {
     }
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     }
 
     _onRowClick(e) {

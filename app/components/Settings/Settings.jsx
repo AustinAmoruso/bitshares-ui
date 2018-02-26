@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import counterpart from "counterpart";
 import IntlActions from "actions/IntlActions";
 import Translate from "react-translate-component";
@@ -17,7 +18,7 @@ import _ from "lodash";
 class Settings extends React.Component {
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     };
 
     constructor(props) {

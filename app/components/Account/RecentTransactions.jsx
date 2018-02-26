@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Translate from "react-translate-component";
 import {saveAs} from "file-saver";
 import Operation from "../Blockchain/Operation";
@@ -32,11 +33,11 @@ class RecentTransactions extends React.Component {
 
     static propTypes = {
         accountsList: ChainTypes.ChainAccountsList.isRequired,
-        compactView: React.PropTypes.bool,
-        limit: React.PropTypes.number,
-        maxHeight: React.PropTypes.number,
-        fullHeight: React.PropTypes.bool,
-        showFilters: React.PropTypes.bool
+        compactView: PropTypes.bool,
+        limit: PropTypes.number,
+        maxHeight: PropTypes.number,
+        fullHeight: PropTypes.bool,
+        showFilters: PropTypes.bool
     };
 
     static defaultProps = {

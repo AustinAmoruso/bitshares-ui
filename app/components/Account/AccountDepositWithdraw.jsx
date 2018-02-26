@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "alt-react";
 import accountUtils from "common/account_utils";
 import utils from "common/utils";
@@ -27,7 +28,7 @@ class AccountDepositWithdraw extends React.Component {
 
     static propTypes = {
         account: ChainTypes.ChainAccount.isRequired,
-        contained: React.PropTypes.bool
+        contained: PropTypes.bool
     };
 
     static defaultProps = {

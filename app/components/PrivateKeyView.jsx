@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import BaseModal from "./Modal/BaseModal";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import WalletUnlockActions from "actions/WalletUnlockActions";
@@ -10,7 +11,7 @@ import QrcodeModal from "./Modal/QrcodeModal";
 export default class PrivateKeyView extends Component {
 
     static propTypes = {
-        pubkey: React.PropTypes.string.isRequired
+        pubkey: PropTypes.string.isRequired
     }
 
     constructor() {

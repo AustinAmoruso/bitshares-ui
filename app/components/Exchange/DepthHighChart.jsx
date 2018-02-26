@@ -1,5 +1,5 @@
 import React from "react";
-import {PropTypes} from "react";
+import PropTypes from "prop-types";
 import ReactHighstock from "react-highcharts/dist/ReactHighstock";
 import utils from "common/utils";
 import counterpart from "counterpart";

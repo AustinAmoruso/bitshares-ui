@@ -1,4 +1,5 @@
-import React, {PropTypes} from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import {isFinite} from "lodash";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import BaseModal from "./BaseModal";

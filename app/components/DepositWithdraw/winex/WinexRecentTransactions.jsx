@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Translate from "react-translate-component";
 import BindToChainState from "components/Utility/BindToChainState";
 import {widechainAPIs } from "api/apiConfig";
@@ -6,8 +7,8 @@ import {widechainAPIs } from "api/apiConfig";
 class WinexRecentTransactions extends React.Component{
 
     static propTypes = {
-        account: React.PropTypes.string,
-        action:React.PropTypes.string
+        account: PropTypes.string,
+        action:PropTypes.string
     };
 
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import BindToChainState from "../Utility/BindToChainState";
 import ChainTypes from "../Utility/ChainTypes";
 import TimeAgo from "../Utility/TimeAgo";
@@ -14,7 +15,7 @@ import utils from "common/utils";
 class BlockTime extends React.Component {
 
     static propTypes = {
-        block_number: React.PropTypes.number.isRequired,
+        block_number: PropTypes.number.isRequired,
         globalObject: ChainTypes.ChainObject.isRequired,
         dynGlobalObject: ChainTypes.ChainObject.isRequired
     };

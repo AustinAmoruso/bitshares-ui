@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Panel from "react-foundation-apps/src/panel";
 import Trigger from "react-foundation-apps/src/trigger";
 import {Link} from "react-router/es";
@@ -18,7 +19,7 @@ class MobileMenu extends React.Component {
     }
 
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     };
 
     onClick() {

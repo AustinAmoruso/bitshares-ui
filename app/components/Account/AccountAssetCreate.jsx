@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Translate from "react-translate-component";
 import classnames from "classnames";
 import AssetActions from "actions/AssetActions";
@@ -24,7 +25,7 @@ class BitAssetOptions extends React.Component {
 
     static propTypes = {
         backingAsset: ChainTypes.ChainAsset.isRequired,
-        isUpdate: React.PropTypes.bool
+        isUpdate: PropTypes.bool
     };
 
     static defaultProps = {

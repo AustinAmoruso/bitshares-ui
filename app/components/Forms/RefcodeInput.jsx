@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classnames from "classnames";
 import Translate from "react-translate-component";
 import cookies from "cookies-js";
@@ -11,11 +12,11 @@ import SettingsStore from "stores/SettingsStore";
 class RefcodeInput extends React.Component {
 
     static propTypes = {
-        label: React.PropTypes.string.isRequired, // a translation key for the label
-        placeholder: React.PropTypes.string, // the placeholder text to be displayed when there is no user_input
-        action_label: React.PropTypes.string, // the placeholder text to be displayed when there is no user_input
-        tabIndex: React.PropTypes.number, // tabindex property to be passed to input tag
-        allow_claim_to_account: React.PropTypes.string // show claim button and allow to claim to specified account
+        label: PropTypes.string.isRequired, // a translation key for the label
+        placeholder: PropTypes.string, // the placeholder text to be displayed when there is no user_input
+        action_label: PropTypes.string, // the placeholder text to be displayed when there is no user_input
+        tabIndex: PropTypes.number, // tabindex property to be passed to input tag
+        allow_claim_to_account: PropTypes.string // show claim button and allow to claim to specified account
     }
 
     constructor(props) {

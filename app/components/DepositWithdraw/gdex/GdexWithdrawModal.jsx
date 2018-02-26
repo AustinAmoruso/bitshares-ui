@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Trigger from "react-foundation-apps/src/trigger";
 import Translate from "react-translate-component";
 import ChainTypes from "components/Utility/ChainTypes";
@@ -23,9 +24,9 @@ class GdexWithdrawModal extends React.Component {
         account: ChainTypes.ChainAccount.isRequired,
         issuer: ChainTypes.ChainAccount.isRequired,
         asset: ChainTypes.ChainAsset.isRequired,
-        memo_rule: React.PropTypes.string.isRequired,
+        memo_rule: PropTypes.string.isRequired,
         balance: ChainTypes.ChainObject,
-        output_supports_memos: React.PropTypes.bool.isRequired,
+        output_supports_memos: PropTypes.bool.isRequired,
 
     };
 

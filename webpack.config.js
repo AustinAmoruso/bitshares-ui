@@ -224,6 +224,11 @@ module.exports = function(env) {
             ]
         },
         resolve: {
+            alias:{
+                "react/lib/ReactTransitionEvents" : path.resolve(root_dir,"app/lib/react_deprecated/ReactTransitionEvents.js"),
+                "react-dom/lib/getVendorPrefixedEventName": path.resolve(root_dir,"app/lib/react_deprecated/getVendorPrefixedEventName.js"),
+                "alt-react": path.resolve(root_dir,"app/lib/alt-react"),
+            },
             modules: [
                 path.resolve(root_dir, "app"),
                 path.resolve(root_dir, "app/lib"),

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import BindToChainState from "components/Utility/BindToChainState";
 import Translate from "react-translate-component";
 import LoadingIndicator from "../../LoadingIndicator";
@@ -17,13 +18,13 @@ import counterpart from "counterpart";
 
 class GdexGatewayInfo extends React.Component {
     static propTypes = {
-        // inner_asset_name:               React.PropTypes.string,
-        // outer_asset_name:           React.PropTypes.string,
+        // inner_asset_name:               PropTypes.string,
+        // outer_asset_name:           PropTypes.string,
         account: ChainTypes.ChainAccount,
         issuer_account: ChainTypes.ChainAccount,
-        gateway: React.PropTypes.string,
+        gateway: PropTypes.string,
         btsCoin: ChainTypes.ChainAsset,
-        memo_rule: React.PropTypes.string
+        memo_rule: PropTypes.string
     };
 
     static defaultProps = {

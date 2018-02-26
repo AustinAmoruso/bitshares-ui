@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import AccountStore from "stores/AccountStore";
 import ChainTypes from "components/Utility/ChainTypes";
 import AccountSelect from "components/Forms/AccountSelect";
@@ -8,7 +9,7 @@ class MyAccounts extends Component {
 
     static propTypes = {
         accounts: ChainTypes.ChainAccountsList.isRequired,
-        onChange: React.PropTypes.func.isRequired
+        onChange: PropTypes.func.isRequired
     }
 
     render() {

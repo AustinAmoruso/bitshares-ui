@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {FormattedNumber} from "react-intl";
 import utils from "common/utils";
 import ChainTypes from "./ChainTypes";
@@ -28,13 +29,13 @@ class FormattedPrice extends React.Component {
     static propTypes = {
         base_asset: ChainTypes.ChainAsset.isRequired,
         quote_asset: ChainTypes.ChainAsset.isRequired,
-        base_amount: React.PropTypes.any,
-        quote_amount: React.PropTypes.any,
-        decimals: React.PropTypes.number
+        base_amount: PropTypes.any,
+        quote_amount: PropTypes.any,
+        decimals: PropTypes.number
     };
 
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     };
 
     constructor(props) {

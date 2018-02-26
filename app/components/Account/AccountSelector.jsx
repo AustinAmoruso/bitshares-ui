@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import utils from "common/utils";
 import AccountImage from "../Account/AccountImage";
 import AccountStore from "stores/AccountStore";
@@ -25,18 +26,18 @@ import TypeAhead from "../Utility/TypeAhead";
 class AccountSelector extends React.Component {
 
     static propTypes = {
-        label: React.PropTypes.string, // a translation key for the label
-        error: React.PropTypes.element, // the error message override
-        placeholder: React.PropTypes.string, // the placeholder text to be displayed when there is no user_input
-        onChange: React.PropTypes.func, // a method to be called any time user input changes
-        onAccountChanged: React.PropTypes.func, // a method to be called when existing account is selected
-        onAction: React.PropTypes.func, // a method called when Add button is clicked
-        accountName: React.PropTypes.string, // the current value of the account selector, the string the user enters
+        label: PropTypes.string, // a translation key for the label
+        error: PropTypes.element, // the error message override
+        placeholder: PropTypes.string, // the placeholder text to be displayed when there is no user_input
+        onChange: PropTypes.func, // a method to be called any time user input changes
+        onAccountChanged: PropTypes.func, // a method to be called when existing account is selected
+        onAction: PropTypes.func, // a method called when Add button is clicked
+        accountName: PropTypes.string, // the current value of the account selector, the string the user enters
         account: ChainTypes.ChainAccount, // account object retrieved via BindToChainState decorator (not input)
-        tabIndex: React.PropTypes.number, // tabindex property to be passed to input tag
-        disableActionButton: React.PropTypes.bool, // use it if you need to disable action button,
-        allowUppercase: React.PropTypes.bool, // use it if you need to allow uppercase letters
-        typeahead: React.PropTypes.array
+        tabIndex: PropTypes.number, // tabindex property to be passed to input tag
+        disableActionButton: PropTypes.bool, // use it if you need to disable action button,
+        allowUppercase: PropTypes.bool, // use it if you need to allow uppercase letters
+        typeahead: PropTypes.array
     };
 
     static defaultProps = {

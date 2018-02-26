@@ -1,5 +1,5 @@
-import React from "react";
-import {PropTypes, Component} from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import cname from "classnames";
 import Translate from "react-translate-component";
 import pw from "zxcvbn";

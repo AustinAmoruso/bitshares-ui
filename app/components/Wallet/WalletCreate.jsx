@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import {Link} from "react-router/es";
 import Translate from "react-translate-component";
 import BrainkeyInput from "components/Wallet/BrainkeyInput";
@@ -13,7 +14,7 @@ import SettingsActions from "actions/SettingsActions";
 class CreateNewWallet extends Component {
 
     static propTypes = {
-        hideTitle: React.PropTypes.bool
+        hideTitle: PropTypes.bool
     };
 
     constructor(props) {

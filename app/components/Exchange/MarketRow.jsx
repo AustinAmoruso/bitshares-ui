@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import FormattedAsset from "../Utility/FormattedAsset";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
@@ -21,7 +22,7 @@ class MarketRow extends React.Component {
     };
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     }
 
     constructor() {

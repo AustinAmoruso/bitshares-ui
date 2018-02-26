@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {Link} from "react-router/es";
 import { connect } from "alt-react";
 import ActionSheet from "react-foundation-apps/src/action-sheet";
@@ -39,8 +40,8 @@ const SUBMENUS = {
 class Header extends React.Component {
 
     static contextTypes = {
-        location: React.PropTypes.object.isRequired,
-        router: React.PropTypes.object.isRequired
+        location: PropTypes.object.isRequired,
+        router: PropTypes.object.isRequired
     };
 
     constructor(props, context) {

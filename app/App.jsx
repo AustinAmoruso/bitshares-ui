@@ -1,5 +1,6 @@
 import {ChainStore} from "bitsharesjs/es";
 import React from "react";
+import PropTypes from "prop-types";
 import IntlStore from "stores/IntlStore";
 import AccountStore from "stores/AccountStore";
 import SettingsStore from "stores/SettingsStore";
@@ -257,8 +258,8 @@ RootIntl = connect(RootIntl, {
 
 class Root extends React.Component {
     static childContextTypes = {
-        router: React.PropTypes.object,
-        location: React.PropTypes.object
+        router: PropTypes.object,
+        location: PropTypes.object
     }
 
     componentDidMount(){

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {Link} from "react-router/es";
 import AccountSelector from "./AccountSelector";
 import BindToChainState from "../Utility/BindToChainState";
@@ -12,8 +13,8 @@ class AccountVotingProxy extends React.Component {
 
     static propTypes = {
         existingProxy: ChainTypes.ChainAccount.isRequired,
-        account: React.PropTypes.object.isRequired,
-        onProxyAccountChanged: React.PropTypes.func.isRequired,
+        account: PropTypes.object.isRequired,
+        onProxyAccountChanged: PropTypes.func.isRequired,
         knownProxies: ChainTypes.ChainAccountsList
     };
 
@@ -29,7 +30,7 @@ class AccountVotingProxy extends React.Component {
     };
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     };
 
     constructor(props){

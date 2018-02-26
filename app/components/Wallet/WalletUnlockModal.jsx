@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Trigger from "react-foundation-apps/src/trigger";
 import BaseModal from "../Modal/BaseModal";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
@@ -21,7 +22,7 @@ var logo = require("assets/logo-ico-blue.png");
 class WalletUnlockModal extends React.Component {
 
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     }
 
     constructor(props) {

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import FormattedAsset from "../Utility/FormattedAsset";
 import FormattedPrice from "../Utility/FormattedPrice";
 import ChainTypes from "../Utility/ChainTypes";
@@ -41,7 +42,7 @@ class MarginPosition extends React.Component {
     };
 
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     };
 
     _onUpdatePosition(e) {
@@ -322,7 +323,7 @@ class MarginPositionPlaceHolder extends React.Component {
     };
 
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     };
 
     _onUpdatePosition(e) {

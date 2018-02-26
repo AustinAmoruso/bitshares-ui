@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Translate from "react-translate-component";
 import {ChainValidation} from "bitsharesjs/es";
 import ChainTypes from "../Utility/ChainTypes";
@@ -13,8 +14,8 @@ class AssetDropdown extends React.Component {
 
     static propTypes = {
         assets: ChainTypes.ChainAssetsList,
-        value: React.PropTypes.string, // asset id
-        onChange: React.PropTypes.func
+        value: PropTypes.string, // asset id
+        onChange: PropTypes.func
     };
 
     render() {
@@ -45,15 +46,15 @@ AssetDropdown = BindToChainState(AssetDropdown);
 class AssetSelector extends React.Component {
 
     static propTypes = {
-        label: React.PropTypes.string, // a translation key for the label
-        error: React.PropTypes.string, // the error message override
-        placeholder: React.PropTypes.string, // the placeholder text to be displayed when there is no user_input
-        onChange: React.PropTypes.func, // a method to be called any time user input changes
-        onFound: React.PropTypes.func, // a method to be called when existing account is selected
-        assetInput: React.PropTypes.string, // the current value of the account selector, the string the user enters
+        label: PropTypes.string, // a translation key for the label
+        error: PropTypes.string, // the error message override
+        placeholder: PropTypes.string, // the placeholder text to be displayed when there is no user_input
+        onChange: PropTypes.func, // a method to be called any time user input changes
+        onFound: PropTypes.func, // a method to be called when existing account is selected
+        assetInput: PropTypes.string, // the current value of the account selector, the string the user enters
         asset: ChainTypes.ChainAsset, // account object retrieved via BindToChainState decorator (not input)
-        tabIndex: React.PropTypes.number, // tabindex property to be passed to input tag
-        disableActionButton: React.PropTypes.string // use it if you need to disable action button
+        tabIndex: PropTypes.number, // tabindex property to be passed to input tag
+        disableActionButton: PropTypes.string // use it if you need to disable action button
     };
 
     static defaultProps = {

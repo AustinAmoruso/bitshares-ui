@@ -1,4 +1,5 @@
-import React, {PropTypes} from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import FormattedAsset from "./FormattedAsset";
 import ChainTypes from "./ChainTypes";
 import BindToChainState from "./BindToChainState";

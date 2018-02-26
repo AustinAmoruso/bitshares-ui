@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import AssetName from "../Utility/AssetName";
@@ -12,13 +13,13 @@ import Translate from "react-translate-component";
 class MarketCard extends React.Component {
 
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     }
 
     static propTypes = {
         quote: ChainTypes.ChainAsset.isRequired,
         base: ChainTypes.ChainAsset.isRequired,
-        invert: React.PropTypes.bool
+        invert: PropTypes.bool
     };
 
     static defaultProps = {

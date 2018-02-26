@@ -1,5 +1,5 @@
 import React from "react";
-import {PropTypes} from "react";
+import PropTypes from "prop-types";
 import {Link} from "react-router/es";
 import ReactTooltip from "react-tooltip";
 import AccountInfo from "./AccountInfo";
@@ -10,7 +10,7 @@ import SettingsActions from "actions/SettingsActions";
 class AccountLeftPanel extends React.Component {
 
     static propTypes = {
-        account: React.PropTypes.object.isRequired,
+        account: PropTypes.object.isRequired,
         linkedAccounts: PropTypes.object,
     };
 

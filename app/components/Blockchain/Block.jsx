@@ -1,5 +1,5 @@
 import React from "react";
-import {PropTypes} from "react";
+import PropTypes from "prop-types";
 import {FormattedDate} from "react-intl";
 import Immutable from "immutable";
 import BlockchainActions from "actions/BlockchainActions";

@@ -1,5 +1,5 @@
-import React from "react";
-import {PropTypes, Component} from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import sha256 from "js-sha256";
 import jdenticon from "jdenticon";
 

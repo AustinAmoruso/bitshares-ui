@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import BaseModal from "./BaseModal";
 import Translate from "react-translate-component";
@@ -21,7 +22,7 @@ import classnames from "classnames";
 
 export default class SendModal extends React.Component {
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     };
 
     constructor(props) {
