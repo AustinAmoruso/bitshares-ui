@@ -45,11 +45,11 @@ export default {
 
       const getProps = sinon.stub().returns(FooStore.getState())
 
-      const Child = connectToStores(React.createClass({
+      const Child = connectToStores(class extends React.Component {
         render() {
           return <span>{this.props.x + this.props.y}</span>
         }
-      }), {
+      }, {
         listenTo(props) {
           return [FooStore]
         },
@@ -57,17 +57,17 @@ export default {
         getProps
       })
 
-      const Parent = React.createClass({
-        getInitialState() {
-          return { y: 0 }
-        },
+      class Parent extends React.Component {
+        state = { y: 0 };
+
         componentDidMount() {
           this.setState({ y: 1 })
-        },
+        }
+
         render() {
           return <Child y={this.state.y} />
         }
-      })
+      }
 
       const node = TestUtils.renderIntoDocument(
         <Parent />
@@ -82,11 +82,11 @@ export default {
     'element mounts and unmounts'() {
       const div = document.createElement('div')
 
-      const LegacyComponent = connectToStores(React.createClass({
+      const LegacyComponent = connectToStores(class extends React.Component {
         render() {
           return React.createElement('div', null, `Foo${this.props.delim}${this.props.foo}`)
         }
-      }), {
+      }, {
         listenTo() {
           return [testStore]
         },
@@ -103,11 +103,11 @@ export default {
     },
 
     'createClass() component can get props from stores'() {
-      const LegacyComponent = React.createClass({
+      class LegacyComponent extends React.Component {
         render() {
           return React.createElement('div', null, `Foo${this.props.delim}${this.props.foo}`)
         }
-      })
+      }
 
       const WrappedComponent = connectToStores(LegacyComponent, {
         listenTo() {
@@ -123,14 +123,15 @@ export default {
     },
 
     'component statics can see context properties'() {
-      const Child = connectToStores(React.createClass({
-        contextTypes: {
+      const Child = connectToStores(class extends React.Component {
+        static contextTypes = {
           store: React.PropTypes.object
-        },
+        };
+
         render() {
           return <span>Foo: {this.props.foo}</span>
         }
-      }), {
+      }, {
         listenTo(props, context) {
           return [context.store]
         },
@@ -139,28 +140,31 @@ export default {
         },
       })
 
-      const ContextComponent = React.createClass({
+      class ContextComponent extends React.Component {
+        static childContextTypes = {
+          store: React.PropTypes.object
+        };
+
         getChildContext() {
           return { store: testStore }
-        },
-        childContextTypes: {
-          store: React.PropTypes.object
-        },
+        }
+
         render() {
           return <Child />
         }
-      })
+      }
+
       const element = React.createElement(ContextComponent)
       const output = ReactDomServer.renderToStaticMarkup(element)
       assert.include(output, 'Foo: Bar')
     },
 
     'component can get use stores from props'() {
-      const LegacyComponent = React.createClass({
+      class LegacyComponent extends React.Component {
         render() {
           return React.createElement('div', null, `Foo${this.props.delim}${this.props.foo}`)
         }
-      })
+      }
 
       const WrappedComponent = connectToStores(LegacyComponent, {
         listenTo(props) {

@@ -2,19 +2,26 @@ import React from "react";
 import { format } from "d3-format";
 import { timeFormat } from "d3-time-format";
 import Translate from "react-translate-component";
-import { ChartCanvas, Chart, series, scale, coordinates, tooltip, axes,
-    indicator, helper, interactive } from "react-stockcharts/es";
+import { ChartCanvas, Chart } from "react-stockcharts/es";
+import { CandlestickSeries, BarSeries, LineSeries, AreaSeries, BollingerSeries,
+    MACDSeries } from "react-stockcharts/lib/series";
+import { XAxis, YAxis } from "react-stockcharts/lib/axes";
+import { fitWidth } from "react-stockcharts/lib/helper";
+import { discontinuousTimeScaleProvider } from "react-stockcharts/lib/scale";
+import { EdgeIndicator } from "react-stockcharts/lib/coordinates";
+import { ema, sma, macd, bollingerBand  } from "react-stockcharts/lib/indicator";
+import {
+    CrossHairCursor,
+    MouseCoordinateX,
+    MouseCoordinateY,
+    CurrentCoordinate
+} from "react-stockcharts/lib/coordinates";
+import { FibonacciRetracement, TrendLine } from "react-stockcharts/lib/interactive";
+import {
+    OHLCTooltip, MovingAverageTooltip, BollingerBandTooltip, MACDTooltip
+} from "react-stockcharts/lib/tooltip";
+import { last } from "react-stockcharts/lib/utils";
 
-const { CandlestickSeries, BarSeries, LineSeries, AreaSeries, BollingerSeries,
-     MACDSeries } = series;
-const { XAxis, YAxis } = axes;
-const { fitWidth } = helper;
-const { discontinuousTimeScaleProvider } = scale;
-const { EdgeIndicator } = coordinates;
-const { ema, sma, macd, bollingerBand } = indicator;
-const { CrossHairCursor, MouseCoordinateX, MouseCoordinateY, CurrentCoordinate } = coordinates;
-const { FibonacciRetracement, TrendLine } = interactive;
-const { OHLCTooltip, MovingAverageTooltip, BollingerBandTooltip, MACDTooltip } = tooltip;
 import colors from "assets/colors";
 import { cloneDeep } from "lodash";
 import utils from "common/utils";
@@ -127,26 +134,30 @@ class CandleStickChartWithZoomPan extends React.Component {
         const calculators = {};
 
         calculators.sma = sma()
-            .windowSize(parseInt(indicatorSettings["sma"], 10))
-            .sourcePath("close")
+            .options({
+                windowSize: parseInt(indicatorSettings["sma"], 10),
+                sourcePath: "close",
+            })
             .stroke("#1f77b4")
             .fill("#1f77b4")
             .merge((d, c) => {d.sma = c;})
             .accessor(d => d.sma);
 
         calculators.ema1 = ema()
-            .windowSize(parseInt(indicatorSettings["ema1"], 10))
+            .options({ windowSize:parseInt(indicatorSettings["ema1"], 10)})
             .merge((d, c) => {d.ema1 = c;})
             .accessor(d => d.ema1);
 
         calculators.ema2 = ema()
-            .windowSize(parseInt(indicatorSettings["ema2"], 10))
+            .options({ windowSize:parseInt(indicatorSettings["ema2"], 10)})
             .merge((d, c) => {d.ema2 = c;})
             .accessor(d => d.ema2);
 
         calculators.smaVolume = sma()
-            .windowSize(parseInt(indicatorSettings["smaVolume"], 10))
-            .sourcePath("volume")
+            .options({
+                windowSize: parseInt(indicatorSettings["smaVolume"], 10),
+                sourcePath: "volume"
+            })
             .merge((d, c) => {d.smaVolume = c;})
             .stroke("#1f77b4")
             .fill("#1f77b4")
@@ -157,9 +168,11 @@ class CandleStickChartWithZoomPan extends React.Component {
             .accessor(d => d.bb);
 
         calculators.macd = macd()
-            .fast(12)
-            .slow(26)
-            .signal(9)
+            .options({
+                fast: 12,
+                slow: 26,
+                signal: 9
+            })
             .stroke({macd: negativeColor, signal: positiveColor})
             .merge((d, c) => {d.macd = c;})
             .accessor(d => d.macd);
@@ -345,17 +358,30 @@ class CandleStickChartWithZoomPan extends React.Component {
         const filteredData = zoom === "all" ? priceData : priceData.filter(a => {
             return a.date > filterDate;
         });
-        const last = filteredData[filteredData.length - 1] || {high: 1};
+        const xScaleProvider = discontinuousTimeScaleProvider
+            .inputDateAccessor(d => d.date);
+        const {
+            data,
+            xScale,
+            xAccessor,
+            displayXAccessor
+        } = xScaleProvider(filteredData);
+        const xExtents = [
+            xAccessor(data[0]),
+            xAccessor(data[data.length - 1])
+        ];
+
         return (
             <ChartCanvas
                 ratio={ratio} width={width - 20} height={height}
                 seriesName="PriceChart"
                 margin={margin}
                 clamp={enableChartClamp}
-                data={filteredData} calculator={calc}
-                xAccessor={d => d.date} xScaleProvider={discontinuousTimeScaleProvider}
-                xExtents={[filteredData[0].date, filteredData[filteredData.length - 1].date]}
+                data={data} calculator={calc}
+                xAccessor={xAccessor} xScale={xScale}
+                xExtents={xExtents}
                 type="hybrid"
+                displayXAccessor={displayXAccessor}
                 className="ps-child no-overflow Stockcharts__wrapper ps-must-propagate"
                 drawMode={enableTrendLine || enableFib}>
             >

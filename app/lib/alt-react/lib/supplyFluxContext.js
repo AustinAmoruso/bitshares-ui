@@ -8,13 +8,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 var _react = require('react');
 
+var createReactClass = require('create-react-class');
+
 var _proptypes = require('prop-types');
 
 var _react2 = _interopRequireDefault(_react);
 
 exports['default'] = function (flux) {
   return function (Component) {
-    return _react2['default'].createClass({
+    return createReactClass({
       childContextTypes: {
         flux: _proptypes.object
       },
